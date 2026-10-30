@@ -246,3 +246,6 @@ a:hover {
     justify-content: center;
   }
 }
+
+/* 微调间距 */
+body { letter-spacing: 0.01em; }
