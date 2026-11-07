@@ -6,21 +6,22 @@
 }
 
 :root {
-  --color-bg: #fafaf7;
-  --color-bg-alt: #f0efe8;
-  --color-text: #3a3a3a;
+  --color-bg: #f5f3eb;
+  --color-bg-alt: #e8e4d6;
+  --color-text: #2d2d2d;
   --color-heading: #1a1a1a;
-  --color-muted: #7a7a6e;
-  --color-accent: #5a9e3f;
-  --color-accent-dark: #4a8a33;
-  --color-accent-light: #e8f0e0;
-  --color-border: #d8d6cc;
+  --color-muted: #6b6b5e;
+  --color-accent: #5d8a3c;
+  --color-accent-dark: #4a7330;
+  --color-accent-light: #dfe8d0;
+  --color-border: #c8c4b4;
   --color-card: #ffffff;
+  --color-dark: #3a3a32;
   --max-width: 1000px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-  --shadow-hover: 0 12px 32px rgba(90, 158, 63, 0.15);
+  --shadow-sm: 2px 2px 0 rgba(0,0,0,0.08);
+  --shadow-md: 4px 4px 0 rgba(0,0,0,0.1);
+  --shadow-lg: 6px 6px 0 rgba(0,0,0,0.12);
+  --radius: 4px;
 }
 
 body {
@@ -41,7 +42,7 @@ body {
 a {
   color: var(--color-accent-dark);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: all 0.2s;
 }
 
 a:hover {
@@ -63,26 +64,25 @@ img {
 
 /* ===== Header / Nav ===== */
 .site-header {
-  background: var(--color-card);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-dark);
+  border-bottom: 3px solid var(--color-accent);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
 }
 
 .site-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 56px;
 }
 
 .site-logo {
   font-size: 20px;
   font-weight: 800;
-  color: var(--color-heading);
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -98,6 +98,7 @@ img {
 .site-logo:hover {
   text-decoration: none;
   transform: scale(1.02);
+  color: #fff;
 }
 
 .site-logo:hover::before {
@@ -106,49 +107,37 @@ img {
 
 .site-nav ul {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   list-style: none;
 }
 
 .site-nav a {
-  color: var(--color-text);
-  font-size: 15px;
-  padding: 8px 14px;
-  border-radius: 6px;
+  color: #e8e4d6;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: var(--radius);
   transition: all 0.2s;
   position: relative;
 }
 
 .site-nav a:hover {
-  color: var(--color-accent-dark);
-  background: var(--color-accent-light);
+  color: #fff;
+  background: rgba(255,255,255,0.1);
   text-decoration: none;
 }
 
 .site-nav a.active {
-  color: var(--color-accent-dark);
+  color: #fff;
   font-weight: 600;
-  background: var(--color-accent-light);
-}
-
-.site-nav a.active::after {
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 2px;
   background: var(--color-accent);
-  border-radius: 2px;
 }
 
 /* ===== Hero ===== */
 .hero {
-  padding: 72px 0 56px;
+  padding: 80px 0 64px;
   text-align: center;
-  background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
-  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(135deg, #4a7c3a 0%, #3a6b2a 50%, #2d5a20 100%);
+  border-bottom: 4px solid var(--color-accent-dark);
   position: relative;
   overflow: hidden;
 }
@@ -156,31 +145,29 @@ img {
 .hero::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(90, 158, 63, 0.06) 0%, transparent 50%);
-  animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(20px, 20px); }
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%);
+  background-size: 20px 20px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 800;
-  color: var(--color-heading);
+  color: #fff;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
   position: relative;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
 }
 
 .hero p {
   font-size: 17px;
-  color: var(--color-muted);
+  color: rgba(255,255,255,0.9);
   max-width: 560px;
   margin: 0 auto;
   position: relative;
@@ -197,59 +184,32 @@ img {
   color: var(--color-heading);
   margin-bottom: 28px;
   padding-bottom: 12px;
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 3px solid var(--color-accent);
   display: inline-block;
   position: relative;
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--color-accent-dark);
 }
 
 /* ===== Cards ===== */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 24px;
+  gap: 20px;
 }
 
 .card {
   background: var(--color-card);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
   padding: 24px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s;
-}
-
-.card:hover::before {
-  transform: scaleX(1);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  transform: translate(-2px, -2px);
   text-decoration: none;
   border-color: var(--color-accent);
 }
@@ -270,15 +230,16 @@ img {
 /* ===== Mod Cards (with image) ===== */
 .mod-card {
   background: var(--color-card);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
 }
 
 .mod-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  transform: translate(-2px, -2px);
   border-color: var(--color-accent);
 }
 
@@ -287,11 +248,12 @@ img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   background: var(--color-bg-alt);
-  transition: transform 0.4s;
+  border-bottom: 2px solid var(--color-border);
+  transition: transform 0.3s;
 }
 
 .mod-card:hover .mod-card-img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .mod-card-body {
@@ -314,12 +276,13 @@ img {
 .mod-tag {
   display: inline-block;
   font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius);
   background: var(--color-accent-light);
   color: var(--color-accent-dark);
   margin-right: 6px;
   margin-top: 10px;
+  border: 1px solid var(--color-accent);
   transition: all 0.2s;
 }
 
@@ -340,7 +303,7 @@ img {
   color: var(--color-heading);
   margin: 36px 0 14px;
   padding-left: 12px;
-  border-left: 3px solid var(--color-accent);
+  border-left: 4px solid var(--color-accent);
 }
 
 .content h2:first-child {
@@ -372,27 +335,29 @@ img {
 }
 
 .gallery-item {
-  border-radius: 10px;
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--color-card);
-  border: 1px solid var(--color-border);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid var(--color-border);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
 }
 
 .gallery-item:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  transform: translate(-2px, -2px);
+  border-color: var(--color-accent);
 }
 
 .gallery-item img {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  transition: transform 0.4s;
+  transition: transform 0.3s;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .gallery-item-caption {
@@ -401,38 +366,15 @@ img {
   color: var(--color-muted);
 }
 
-/* ===== Buttons ===== */
-.btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.btn-primary {
-  background: var(--color-accent);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--color-accent-dark);
-  text-decoration: none;
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-}
-
 /* ===== Footer ===== */
 .site-footer {
-  border-top: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-accent);
   padding: 28px 0;
   text-align: center;
   color: var(--color-muted);
   font-size: 13px;
   margin-top: 48px;
-  background: var(--color-bg-alt);
+  background: var(--color-dark);
 }
 
 /* ===== Mod Section Divider ===== */
@@ -446,13 +388,12 @@ img {
   color: var(--color-heading);
   margin-bottom: 16px;
   padding-left: 12px;
-  border-left: 3px solid var(--color-accent);
-  position: relative;
+  border-left: 4px solid var(--color-accent);
 }
 
 /* ===== Scrollbar ===== */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -461,17 +402,17 @@ img {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted);
+  background: var(--color-accent);
 }
 
 /* ===== Selection ===== */
 ::selection {
-  background: var(--color-accent-light);
-  color: var(--color-accent-dark);
+  background: var(--color-accent);
+  color: white;
 }
 
 /* ===== Responsive ===== */
@@ -480,10 +421,14 @@ img {
     font-size: 30px;
   }
 
+  .hero {
+    padding: 48px 0 40px;
+  }
+
   .site-header .container {
     flex-direction: column;
     height: auto;
-    padding: 14px 20px;
+    padding: 12px 20px;
     gap: 10px;
   }
 
@@ -494,15 +439,19 @@ img {
   }
 
   .site-nav a {
-    padding: 6px 10px;
-    font-size: 14px;
+    padding: 5px 10px;
+    font-size: 13px;
   }
 
   .card:hover {
-    transform: translateY(-2px);
+    transform: translate(-1px, -1px);
   }
 
   .mod-card:hover {
-    transform: translateY(-2px);
+    transform: translate(-1px, -1px);
+  }
+
+  .section-title {
+    font-size: 22px;
   }
 }
