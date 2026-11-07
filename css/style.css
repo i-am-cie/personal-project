@@ -517,23 +517,6 @@ img {
   margin: -14px 0 24px;
 }
 
-/* ===== Card header for cards without a photo ===== */
-.mod-card-head {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-  font-size: 46px;
-  line-height: 1;
-  background: linear-gradient(135deg, #dfe8d0 0%, #cfe0b8 55%, #bcd3a2 100%);
-  border-bottom: 2px solid var(--color-border);
-  transition: transform 0.3s;
-}
-
-.mod-card:hover .mod-card-head {
-  transform: scale(1.03);
-}
-
 /* ===== Lightbox (responds to the user) ===== */
 .lightbox {
   position: fixed;
