@@ -1,22 +1,30 @@
 # MC Notes
 
-一个关于 Minecraft 的个人笔记站，记录生存心得、模组推荐和建筑展示。
+A personal Minecraft notebook: survival notes, mod recommendations, castle builds and maps worth playing.
 
-## 页面结构
+Live site: <https://i-am-cie.github.io/personal-project/>
 
-- `index.html` - 首页
-- `about.html` - 关于
-- `survival.html` - 生存攻略
-- `mods.html` - 模组推荐
-- `builds.html` - 建筑展示
-- `resources.html` - 资源链接
+## Pages
 
-## 技术栈
+- `index.html` — home page: hero, what I am playing now, overview of the site
+- `about.html` — how I got into Minecraft, servers, stories, creators I follow
+- `survival.html` — survival notes in phases: day one, first three days, first week, late game
+- `mods.html` — mod recommendations in four groups, filterable by category
+- `builds.html` — castles built in survival mode, with what I learned about building
+- `maps.html` — puzzle, PvP and survival-challenge maps
+- `resources.html` — the sites I actually use
 
-- 纯 HTML + CSS
-- 无框架，无构建工具
-- 响应式设计
+## Stack
 
-## 部署
+- Hand-written HTML and CSS, no framework, no build step
+- Semantic HTML (`header`, `nav`, `main`, `section`, `figure`, `footer`)
+- Responsive layout, breakpoint at 640px
+- A small amount of vanilla JavaScript in `js/main.js`:
+  - category filter on the mods page
+  - click-to-enlarge lightbox for screenshots
+- Icons: `favicon.svg`, `favicon-32.png` (32×32), `apple-touch-icon.png` (180×180)
+- Social preview: `og-image.jpg` (1200×630), referenced from every page with Open Graph tags
 
-通过 GitHub Pages 发布。
+## Deploy
+
+Published with GitHub Pages from the `main` branch.

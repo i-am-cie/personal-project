@@ -1,209 +1,235 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>模组推荐 - MC Notes</title>
+  <title>Mods — MC Notes</title>
+  <meta name="description" content="Mods I actually installed and played: performance essentials, shaders, content mods and the ones that only exist to hurt you.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MC Notes">
+  <meta property="og:title" content="Mods — MC Notes">
+  <meta property="og:description" content="Mods I actually installed and played: performance essentials, shaders, content mods and the ones that only exist to hurt you.">
+  <meta property="og:url" content="https://i-am-cie.github.io/personal-project/mods.html">
+  <meta property="og:image" content="https://i-am-cie.github.io/personal-project/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="site-logo">MC Notes</a>
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="about.html">关于</a></li>
-          <li><a href="survival.html">生存攻略</a></li>
-          <li><a href="mods.html" class="active">模组推荐</a></li>
-          <li><a href="builds.html">建筑展示</a></li>
-          <li><a href="maps.html">好玩地图</a></li>
-          <li><a href="resources.html">资源链接</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="survival.html">Survival</a></li>
+          <li><a href="mods.html" class="active" aria-current="page">Mods</a></li>
+          <li><a href="builds.html">Builds</a></li>
+          <li><a href="maps.html">Maps</a></li>
+          <li><a href="resources.html">Resources</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">模组推荐</h2>
-      <p style="margin-bottom: 28px; color: var(--color-muted);">都是我实际装过玩过的，没装过的不瞎推荐。点卡片跳官网下载。</p>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Mods</h2>
+        <p style="margin-bottom: 24px; color: var(--color-muted);">Every mod here I installed and played myself. Nothing is recommended just because it looks good on a download page. Click a card to open the download page.</p>
 
-      <div class="mod-section">
-        <h3 class="mod-section-title">装了就能跑（优化必装）</h3>
-        <div class="card-grid">
-          <a href="https://modrinth.com/mod/sodium" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="sodium.jpg" alt="Sodium 模组设置界面">
-            <div class="mod-card-body">
-              <h3>Sodium</h3>
-              <p>不用解释，装模组之前先装它。我那台老笔记本不装 Sodium 根本跑不动整合包，装了直接帧率翻倍。</p>
-              <span class="mod-tag">必装</span>
-              <span class="mod-tag">性能</span>
-            </div>
-          </a>
-          <a href="https://modrinth.com/mod/lithium" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="lithium.jpg" alt="Lithium 模组信息界面">
-            <div class="mod-card-body">
-              <h3>Lithium</h3>
-              <p>和 Sodium 是一套的，优化游戏逻辑和内存。两个一起装，没什么好说的。</p>
-              <span class="mod-tag">必装</span>
-              <span class="mod-tag">性能</span>
-            </div>
-          </a>
-          <a href="https://modrinth.com/mod/journeymap" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="journeymap.jpg" alt="JourneyMap 小地图">
-            <div class="mod-card-body">
-              <h3>JourneyMap</h3>
-              <p>小地图，自动记录地形，能标记坐标。我探图必装，不然走两步就找不到家在哪。</p>
-              <span class="mod-tag">实用</span>
-              <span class="mod-tag">地图</span>
-            </div>
-          </a>
-          <a href="https://modrinth.com/mod/appleskin" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="appleskin.jpg" alt="AppleSkin 食物显示">
-            <div class="mod-card-body">
-              <h3>AppleSkin</h3>
-              <p>食物栏显示具体数值，吃东西不用猜哪个饱了。玩生存的都懂，饿肚子是常态。</p>
-              <span class="mod-tag">实用</span>
-              <span class="mod-tag">UI</span>
-            </div>
-          </a>
+        <div class="filter-bar" data-filter-bar role="group" aria-label="Filter mods by category">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="performance" aria-pressed="false">Performance</button>
+          <button class="filter-btn" type="button" data-filter="shaders" aria-pressed="false">Shaders</button>
+          <button class="filter-btn" type="button" data-filter="content" aria-pressed="false">Content</button>
+          <button class="filter-btn" type="button" data-filter="hardcore" aria-pressed="false">Hardcore</button>
         </div>
-      </div>
+        <p class="filter-status" data-filter-status aria-live="polite">Showing 16 of 16 entries.</p>
 
-      <div class="mod-section">
-        <h3 class="mod-section-title">光影推荐（画面党必看）</h3>
-        <div class="card-grid">
-          <a href="https://bitslablab.com/bslshaders/" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="shader1.jpg" alt="BSL Shaders 光影">
-            <div class="mod-card-body">
-              <h3>BSL Shaders</h3>
-              <p>我用了最久的光影，暖色调，亮度均匀，适合建筑玩家。GTX 1050Ti 就能跑，我那台老电脑开着刚好。</p>
-              <span class="mod-tag">光影</span>
-              <span class="mod-tag">中配</span>
-            </div>
-          </a>
-          <a href="https://modrinth.com/shader/complementary-reimagined" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="shader2.jpg" alt="Complementary Reimagined 光影">
-            <div class="mod-card-body">
-              <h3>Complementary Reimagined</h3>
-              <p>画质和性能平衡得最好的，色彩真实，树叶还会摇晃。我现在用的就是这个，GTX 1060 以上随便跑。</p>
-              <span class="mod-tag">光影</span>
-              <span class="mod-tag">中高配</span>
-            </div>
-          </a>
-          <a href="https://sildurs-shaders.github.io/" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="sildurs.jpg" alt="Sildur's Vibrant 光影">
-            <div class="mod-card-body">
-              <h3>Sildur's Vibrant Lite</h3>
-              <p>低配玩家福音，多档位可调，最低档集显都能跑。我那台老笔记本玩不了高配光影，用这个凑活。</p>
-              <span class="mod-tag">光影</span>
-              <span class="mod-tag">低配</span>
-            </div>
-          </a>
-          <a href="https://sonicether.com/shaders/seus-renewed/" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="seus.jpg" alt="SEUS Renewed 光影">
-            <div class="mod-card-body">
-              <h3>SEUS Renewed</h3>
-              <p>经典中的经典，光照和水体效果贼惊艳。就是太吃配置了，我电脑开着帧率直接掉到 20，只能截图的时候开开。</p>
-              <span class="mod-tag">光影</span>
-              <span class="mod-tag">高配</span>
-            </div>
-          </a>
+        <div class="mod-section">
+          <h3 class="mod-section-title">Install first — performance</h3>
+          <div class="card-grid">
+            <a href="https://modrinth.com/mod/sodium" target="_blank" rel="noopener" class="mod-card" data-cat="performance">
+              <img class="mod-card-img" src="sodium.jpg" alt="Sodium mod settings screen">
+              <div class="mod-card-body">
+                <h3>Sodium</h3>
+                <p>No explanation needed — install it before any other mod. My old laptop cannot run a modpack without it; with it, the frame rate doubles.</p>
+                <span class="mod-tag">Essential</span>
+                <span class="mod-tag">Performance</span>
+              </div>
+            </a>
+            <a href="https://modrinth.com/mod/lithium" target="_blank" rel="noopener" class="mod-card" data-cat="performance">
+              <img class="mod-card-img" src="lithium.jpg" alt="Lithium mod information screen">
+              <div class="mod-card-body">
+                <h3>Lithium</h3>
+                <p>Part of the same family as Sodium: it optimises game logic and memory. Install both and stop thinking about it.</p>
+                <span class="mod-tag">Essential</span>
+                <span class="mod-tag">Performance</span>
+              </div>
+            </a>
+            <a href="https://modrinth.com/mod/journeymap" target="_blank" rel="noopener" class="mod-card" data-cat="performance">
+              <img class="mod-card-img" src="journeymap.jpg" alt="JourneyMap minimap">
+              <div class="mod-card-body">
+                <h3>JourneyMap</h3>
+                <p>A minimap that records the terrain automatically and lets you set waypoints. I never explore without it, otherwise I lose my house after two hundred blocks.</p>
+                <span class="mod-tag">Useful</span>
+                <span class="mod-tag">Map</span>
+              </div>
+            </a>
+            <a href="https://modrinth.com/mod/appleskin" target="_blank" rel="noopener" class="mod-card" data-cat="performance">
+              <img class="mod-card-img" src="appleskin.jpg" alt="AppleSkin hunger overlay">
+              <div class="mod-card-body">
+                <h3>AppleSkin</h3>
+                <p>Shows the real numbers behind the hunger bar, so you stop guessing which food is worth eating. Anyone who plays survival understands.</p>
+                <span class="mod-tag">Useful</span>
+                <span class="mod-tag">Interface</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="mod-section">
-        <h3 class="mod-section-title">加内容的（玩腻了原版试试）</h3>
-        <div class="card-grid">
-          <a href="https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="twilight1.jpg" alt="暮色森林城堡">
-            <div class="mod-card-body">
-              <h3>暮色森林 (Twilight Forest)</h3>
-              <p>上个月刚更到 4.9.3850，加了村落。一整个永远黄昏的维度，9 个 Boss 按顺序打，像玩 RPG 一样。我打了快三周才通。</p>
-              <span class="mod-tag">维度</span>
-              <span class="mod-tag">Boss战</span>
-            </div>
-          </a>
-          <a href="https://www.curseforge.com/minecraft/mc-mods/twilightforest-epicified" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="twilight2.jpg" alt="暮色森林建筑群">
-            <div class="mod-card-body">
-              <h3>暮色森林 Epicfied</h3>
-              <p>暮色森林的扩展，给 12 把武器加了 Epic Fight 的连招系统。打 Boss 不再是站着撸，要走位要连招。</p>
-              <span class="mod-tag">扩展</span>
-              <span class="mod-tag">战斗</span>
-            </div>
-          </a>
-          <a href="https://www.curseforge.com/minecraft/mc-mods/create" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="create.jpg" alt="Create 机械动力">
-            <div class="mod-card-body">
-              <h3>Create（机械动力）</h3>
-              <p>用齿轮传送带做自动化，从自动农场到全自动矿车。我花了一个周末做了个自动甘蔗机，爽是真的爽。</p>
-              <span class="mod-tag">自动化</span>
-              <span class="mod-tag">机械</span>
-            </div>
-          </a>
-          <a href="https://www.curseforge.com/minecraft/mc-mods/yungs-better-end-island" target="_blank" class="mod-card">
-            <div class="mod-card-body">
-              <h3>YUNG's Better End Island</h3>
-              <p>把末地岛重新设计了，黑曜石柱改了，出生点布局也变了，还加了个钟楼召唤龙。打完龙之后去末地城路上好看多了。</p>
-              <span class="mod-tag">改造</span>
-              <span class="mod-tag">末地</span>
-            </div>
-          </a>
+        <div class="mod-section">
+          <h3 class="mod-section-title">Shaders — for people who care about looks</h3>
+          <div class="card-grid">
+            <a href="https://bitslablab.com/bslshaders/" target="_blank" rel="noopener" class="mod-card" data-cat="shaders">
+              <img class="mod-card-img" src="shader1.jpg" alt="BSL Shaders screenshot">
+              <div class="mod-card-body">
+                <h3>BSL Shaders</h3>
+                <p>The shader pack I used the longest. Warm colours, even brightness, great for builders. A GTX 1050 Ti runs it, which is exactly what my old machine has.</p>
+                <span class="mod-tag">Shaders</span>
+                <span class="mod-tag">Mid-range</span>
+              </div>
+            </a>
+            <a href="https://modrinth.com/shader/complementary-reimagined" target="_blank" rel="noopener" class="mod-card" data-cat="shaders">
+              <img class="mod-card-img" src="shader2.jpg" alt="Complementary Reimagined screenshot">
+              <div class="mod-card-body">
+                <h3>Complementary Reimagined</h3>
+                <p>The best balance of looks and performance: believable colour, leaves that move. This is what I use now, and a GTX 1060 handles it easily.</p>
+                <span class="mod-tag">Shaders</span>
+                <span class="mod-tag">Mid-high</span>
+              </div>
+            </a>
+            <a href="https://sildurs-shaders.github.io/" target="_blank" rel="noopener" class="mod-card" data-cat="shaders">
+              <img class="mod-card-img" src="sildurs.jpg" alt="Sildur's Vibrant shaders screenshot">
+              <div class="mod-card-body">
+                <h3>Sildur's Vibrant Lite</h3>
+                <p>A gift to low-end players: several quality levels, and the lowest one runs on integrated graphics. My old laptop cannot do high-end shaders, so this is what I use there.</p>
+                <span class="mod-tag">Shaders</span>
+                <span class="mod-tag">Low-end</span>
+              </div>
+            </a>
+            <a href="https://sonicether.com/shaders/seus-renewed/" target="_blank" rel="noopener" class="mod-card" data-cat="shaders">
+              <img class="mod-card-img" src="seus.jpg" alt="SEUS Renewed screenshot">
+              <div class="mod-card-body">
+                <h3>SEUS Renewed</h3>
+                <p>A classic, and the lighting and water still look stunning. Also brutal on hardware: my frame rate drops to 20, so it only goes on for screenshots.</p>
+                <span class="mod-tag">Shaders</span>
+                <span class="mod-tag">High-end</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="mod-section">
-        <h3 class="mod-section-title">找虐的（硬核玩家专属）</h3>
-        <div class="card-grid">
-          <a href="https://www.curseforge.com/minecraft/mc-mods/zombie-awareness" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="zombie100.jpg" alt="惊变100天">
-            <div class="mod-card-body">
-              <h3>惊变 100 天</h3>
-              <p>僵尸每 10 天进化一次，从走路慢到能搭桥拆墙火抗。我撑了 40 天就崩了，晚上根本不敢出门。</p>
-              <span class="mod-tag">硬核</span>
-              <span class="mod-tag">僵尸</span>
-            </div>
-          </a>
-          <a href="https://www.curseforge.com/minecraft/mc-mods/slashblade" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="slashblade.jpg" alt="拔刀剑">
-            <div class="mod-card-body">
-              <h3>拔刀剑 (SlashBlade)</h3>
-              <p>日本武士刀模组，武器能养成升级，连招系统比动作游戏还爽。我专门开了个档只玩刀，击杀数刷够了解锁妖刀。</p>
-              <span class="mod-tag">战斗</span>
-              <span class="mod-tag">武器</span>
-            </div>
-          </a>
-          <a href="https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="aoa.jpg" alt="虚无世界">
-            <div class="mod-card-body">
-              <h3>虚无世界 (Advent of Ascension)</h3>
-              <p>20 多个新维度，几百种怪，上百把武器。原版打腻了可以试试，内容量是原版的十倍，玩一个月都玩不完。</p>
-              <span class="mod-tag">大型</span>
-              <span class="mod-tag">维度</span>
-            </div>
-          </a>
-          <a href="https://www.curseforge.com/minecraft/modpacks/rlcraft" target="_blank" class="mod-card">
-            <img class="mod-card-img" src="rlcraft.jpg" alt="RLCraft 荒岛余生">
-            <div class="mod-card-body">
-              <h3>RLCraft（荒岛余生）</h3>
-              <p>渴了会渴死，摔了会骨折，睡觉会被怪打醒。我玩了一天就卸载了，适合喜欢受虐的朋友。</p>
-              <span class="mod-tag">超硬核</span>
-              <span class="mod-tag">生存</span>
-            </div>
-          </a>
+        <div class="mod-section">
+          <h3 class="mod-section-title">Content — for when vanilla runs dry</h3>
+          <div class="card-grid">
+            <a href="https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest" target="_blank" rel="noopener" class="mod-card" data-cat="content">
+              <img class="mod-card-img" src="twilight1.jpg" alt="Twilight Forest castle">
+              <div class="mod-card-body">
+                <h3>Twilight Forest</h3>
+                <p>Updated to 4.9.3850 last month with villages. An entire dimension locked in permanent dusk, with nine bosses in a fixed order — it plays like an RPG. It took me almost three weeks to finish.</p>
+                <span class="mod-tag">Dimension</span>
+                <span class="mod-tag">Boss fights</span>
+              </div>
+            </a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/twilightforest-epicified" target="_blank" rel="noopener" class="mod-card" data-cat="content">
+              <img class="mod-card-img" src="twilight2.jpg" alt="Twilight Forest structures">
+              <div class="mod-card-body">
+                <h3>Twilight Forest Epicfied</h3>
+                <p>An add-on that gives twelve Twilight Forest weapons Epic Fight combos. Bosses stop being a standing-still-and-swing contest and become something you have to position for.</p>
+                <span class="mod-tag">Add-on</span>
+                <span class="mod-tag">Combat</span>
+              </div>
+            </a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/create" target="_blank" rel="noopener" class="mod-card" data-cat="content">
+              <img class="mod-card-img" src="create.jpg" alt="Create mod machinery">
+              <div class="mod-card-body">
+                <h3>Create</h3>
+                <p>Gears, belts and automation, from automatic farms to self-driving minecarts. I spent a weekend on an automatic sugar cane farm and it was worth every hour.</p>
+                <span class="mod-tag">Automation</span>
+                <span class="mod-tag">Machines</span>
+              </div>
+            </a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/yungs-better-end-island" target="_blank" rel="noopener" class="mod-card" data-cat="content">
+              <div class="mod-card-head" aria-hidden="true">🌌</div>
+              <div class="mod-card-body">
+                <h3>YUNG's Better End Island</h3>
+                <p>Redesigns the end island: new obsidian pillars, a different spawn layout and a bell tower that summons the dragon. The walk to the end city is far more interesting afterwards.</p>
+                <span class="mod-tag">Rework</span>
+                <span class="mod-tag">The End</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
 
-    </div>
-  </section>
+        <div class="mod-section">
+          <h3 class="mod-section-title">Hardcore — for people who enjoy pain</h3>
+          <div class="card-grid">
+            <a href="https://www.curseforge.com/minecraft/mc-mods/zombie-awareness" target="_blank" rel="noopener" class="mod-card" data-cat="hardcore">
+              <img class="mod-card-img" src="zombie100.jpg" alt="100 Days of Zombies screenshot">
+              <div class="mod-card-body">
+                <h3>100 Days of Zombies</h3>
+                <p>Zombies evolve every ten days, from slow walkers to bridge-builders that break walls and shrug off fire. I lasted 40 days. At night I did not dare leave the house.</p>
+                <span class="mod-tag">Hardcore</span>
+                <span class="mod-tag">Zombies</span>
+              </div>
+            </a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/slashblade" target="_blank" rel="noopener" class="mod-card" data-cat="hardcore">
+              <img class="mod-card-img" src="slashblade.jpg" alt="SlashBlade screenshot">
+              <div class="mod-card-body">
+                <h3>SlashBlade</h3>
+                <p>A katana mod where weapons level up as you use them, with a combo system better than most action games. I started a separate world just for the sword and unlocked the demon blade after enough kills.</p>
+                <span class="mod-tag">Combat</span>
+                <span class="mod-tag">Weapons</span>
+              </div>
+            </a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/advent-of-ascension" target="_blank" rel="noopener" class="mod-card" data-cat="hardcore">
+              <img class="mod-card-img" src="aoa.jpg" alt="Advent of Ascension screenshot">
+              <div class="mod-card-body">
+                <h3>Advent of Ascension</h3>
+                <p>More than twenty dimensions, hundreds of mobs and over a hundred weapons. If vanilla bores you, this is ten times the content — a month will not be enough.</p>
+                <span class="mod-tag">Massive</span>
+                <span class="mod-tag">Dimensions</span>
+              </div>
+            </a>
+            <a href="https://www.curseforge.com/minecraft/modpacks/rlcraft" target="_blank" rel="noopener" class="mod-card" data-cat="hardcore">
+              <img class="mod-card-img" src="rlcraft.jpg" alt="RLCraft screenshot">
+              <div class="mod-card-body">
+                <h3>RLCraft</h3>
+                <p>You get thirsty enough to die, break bones when you fall, and monsters wake you up while you sleep. I uninstalled it after a day. Perfect for anyone who likes suffering.</p>
+                <span class="mod-tag">Brutal</span>
+                <span class="mod-tag">Survival</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>MC Notes &copy; 2026 · 老玩家的碎碎念</p>
+      <p>MC Notes &copy; 2026 · notes from an old player</p>
     </div>
   </footer>
+
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
