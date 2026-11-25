@@ -24,7 +24,22 @@ Live site: <https://i-am-cie.github.io/personal-project/>
   - click-to-enlarge lightbox for screenshots
 - Icons: `favicon.svg`, `favicon-32.png` (32×32), `apple-touch-icon.png` (180×180)
 - Social preview: `og-image.jpg` (1200×630), referenced from every page with Open Graph tags
+- Zero-dependency static checks in `tools/check-site.mjs` (Node 22, no install step)
 
 ## Deploy
 
 Published with GitHub Pages from the `main` branch.
+
+## Checks
+
+`tools/check-site.mjs` verifies that every local link and asset resolves, every
+image has an `alt`, external new-tab links carry `rel="noopener"`, each page has
+the required Open Graph metadata, and element ids are unique. Run it locally:
+
+```
+node tools/check-site.mjs
+```
+
+GitHub Actions runs the same check on every push and pull request to `main`
+(see `.github/workflows/ci.yml`). Warnings (for example an unreferenced
+backup image) do not fail the build; errors do.

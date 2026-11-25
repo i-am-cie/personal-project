@@ -297,6 +297,7 @@ img {
   margin: 0 auto;
 }
 
+.content h1,
 .content h2 {
   font-size: 22px;
   font-weight: 700;
@@ -306,6 +307,7 @@ img {
   border-left: 4px solid var(--color-accent);
 }
 
+.content h1:first-child,
 .content h2:first-child {
   margin-top: 0;
 }
